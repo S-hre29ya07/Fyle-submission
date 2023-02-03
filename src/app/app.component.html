@@ -1,0 +1,44 @@
+<div class="toolbar" role="banner">
+  <h1>Fyle Internship Assignment</h1>
+    <div class="spacer"></div>
+</div>
+  <div class="content" role="main">
+    <div class="card highlight-card card-small search-card">
+      <div>
+        <input placeholder="Enter Book Name" [(ngModel)]="inputBook" minlength="3" (click)="btnSearchClicked()">
+      </div>
+      <div>
+        <input placeholder="Enter Author Name" [(ngModel)]="inputAuthor" minlength="3" (click)="btnSearchClicked()">
+      </div>
+      <button class="search-button" (click)="btnSearchClicked()">Search</button>
+    </div>
+
+    <div *ngIf="isLoading">
+      <div class="loader"></div>
+    </div>
+    <div class="card card-small">
+      <h5 *ngIf="isShow">{{bookOutput}} books found</h5>
+    </div>
+
+    <span *ngIf="isShow">Search Results are limited to top 8 books per page out of {{bookOutput}} found</span>
+
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>First publish year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of booksArray | paginate:{itemsPerPage:8, currentPage:p};">
+        <td>{{ book.title }}</td>
+        <td>{{ book.author_name }}</td>
+        <td>{{ book.first_publish_year }}</td>
+      </tr>
+    </tbody>
+    <pagination-controls (pageChange)="p=$event"></pagination-controls>
+  </table>
+</div>
+
