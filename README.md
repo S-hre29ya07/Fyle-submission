@@ -7,10 +7,10 @@
 * Called the data of API and stored it in table format.
 * For pagination I have used ```npm i ngx-pagination```
 
-###Usage-
+### Usage-
 * First clone the repo by-
 ```git clone```
 * Install the dependencies by-
 ```npm install```
-* Eun the project-
+* Run the project-
 ```ng serve```
