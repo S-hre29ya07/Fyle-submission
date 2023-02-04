@@ -9,7 +9,7 @@
 
 ### Usage-
 * First clone the repo by-
-```git clone```
+```git clone https://github.com/S-hre29ya07/Fyle-submission.git```
 * Install the dependencies by-
 ```npm install```
 * Run the project-
